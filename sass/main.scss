@@ -1,0 +1,58 @@
+@import '_normalize.scss';
+@import 'variables.scss';
+@import 'helpers.scss';
+
+
+/* Settings */
+html, body {
+  background: white;
+  color: black;
+  font: $baseFontSize $baseLineHeight $bodyFont;
+
+}
+
+
+/* Text */
+h1 { font-size: em(24); color: $primaryColor; }
+h2 { font-size: em(24); color: $secondaryColor; }
+h3 { font-size: em(24); color: $primaryColor; }
+h4 { font-size: em(24); color: $primaryColor; }
+h5 { font-size: em(24); color: $secondaryColor; }
+h6 { font-size: em(24); color: $primaryColor; }
+p { font-size: em(24); }
+ol { padding-left: 17px; }
+ul { list-style: none; @extend ol }
+li { margin-bottom: 7px; }
+a { color: $linkColor; text-decoration: none; transition: all .5s ease; }
+a:hover { text-decoration: none; color: $linkHover; }
+
+
+
+
+/* Mobile Nav */
+#burger { font-size: 3em; float: right; line-height: 0; margin: -6px 25px 0 0; padding: 0; display: none; }
+
+#mobile-nav-wrap { width: 100%; background: #f8f8f8; display: none; }
+#mobile-nav-wrap nav { padding: 20px; border-top: 1px solid #ddd;  }
+#mobile-nav-wrap nav ul { @include no-margin; }
+#mobile-nav-wrap nav ul li { margin-bottom: 20px; }
+#mobile-nav-wrap nav a { font-size: em(18); }
+#mobile-nav-wrap nav>ul>li>a { font-weight: bold; }
+#mobile-nav-wrap nav ul ul { margin: 20px 0 50px 15px; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print{*{background:transparent!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100%!important}@page{margin:.5cm}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}}
+
