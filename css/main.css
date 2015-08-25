@@ -175,7 +175,7 @@ th {
   padding: 0; }
 
 /* Clearfix */
-.clearfix:after, .cf:after {
+#masthead-wrap header:after, .main-navigation ul:after, .centered:after {
   content: "";
   display: table;
   clear: both; }
@@ -187,40 +187,49 @@ th {
   box-sizing: border-box; }
 
 /* Center Block Element */
+#masthead-wrap header, .centered, #footer-wrap .site-footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 /* Remove all margin and padding */
 /* PX to EM Converter */
 /* generate easy linear gradients */
 /* Wordpress Image Alignment and Caption Class */
+.screen-reader-text {
+  position: absolute !important;
+  left: -999em; }
+
 /* Settings */
 html, body {
   background: white;
   color: black;
-  font: 16 1 Arial, sans-serif; }
+  font: 16 1 "Open Sans", sans-serif; }
 
 /* Text */
 h1 {
   font-size: 1.5em;
-  color: blue; }
+  color: lightblue; }
 
 h2 {
   font-size: 1.5em;
-  color: purple; }
+  color: lightgreen; }
 
 h3 {
   font-size: 1.5em;
-  color: blue; }
+  color: lightblue; }
 
 h4 {
   font-size: 1.5em;
-  color: blue; }
+  color: lightblue; }
 
 h5 {
   font-size: 1.5em;
-  color: purple; }
+  color: lightgreen; }
 
 h6 {
   font-size: 1.5em;
-  color: blue; }
+  color: lightblue; }
 
 p {
   font-size: 1.5em; }
@@ -241,9 +250,35 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: orange; }
+  color: #f59f1a; }
 
-/* Mobile Nav */
+/* Header */
+#masthead-wrap {
+  position: fixed;
+  background: white;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%; }
+  #masthead-wrap header {
+    width: 1081px; }
+  #masthead-wrap .site-description {
+    width: 100%;
+    background: #b42c33;
+    font: 0.875em "Open Sans", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 6px 0;
+    letter-spacing: 2px;
+    font-weight: 300; }
+  #masthead-wrap .site-title {
+    float: left; }
+    #masthead-wrap .site-title img {
+      width: 162px;
+      height: 48px; }
+
+/* Navigation */
 #burger {
   font-size: 3em;
   float: right;
@@ -252,30 +287,151 @@ a:hover {
   padding: 0;
   display: none; }
 
-#mobile-nav-wrap {
+.main-navigation {
+  float: right;
+  margin: 37px 0 34px; }
+  .main-navigation ul {
+    margin: 0;
+    padding: 0; }
+    .main-navigation ul li {
+      float: left;
+      margin-left: 10px;
+      position: relative; }
+      .main-navigation ul li a {
+        color: #666;
+        padding: 4px;
+        display: block;
+        font: 0.875em "Open Sans", sans-serif; }
+        .main-navigation ul li a:hover {
+          color: #f59f1a; }
+      .main-navigation ul li.menu-item-has-children > a:after {
+        margin-left: 7px;
+        content: "\f107";
+        font-family: FontAwesome; }
+      .main-navigation ul li.current-menu-item a {
+        color: #f59f1a; }
+      .main-navigation ul li:hover ul {
+        display: block; }
+  .main-navigation > ul > li:last-child > a {
+    color: black;
+    font-weight: bold; }
+  .main-navigation ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: 0; }
+    .main-navigation ul.sub-menu li {
+      float: none; }
+      .main-navigation ul.sub-menu li a {
+        white-space: nowrap; }
+
+/* Content */
+#content {
+  min-height: 500px;
+  padding-top: 134px;
+  position: relative;
+  z-index: 1; }
+
+.hero-unit {
   width: 100%;
-  background: #f8f8f8;
-  display: none; }
+  background: black;
+  text-align: center; }
 
-#mobile-nav-wrap nav {
-  padding: 20px;
-  border-top: 1px solid #ddd; }
+.centered {
+  width: 1081px; }
 
-#mobile-nav-wrap nav ul {
-  margin: 0;
-  padding: 0; }
+/* Flip Cards */
+.flip-container {
+  float: left;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d; }
 
-#mobile-nav-wrap nav ul li {
-  margin-bottom: 20px; }
+.flip-container:hover .back, .flip-container.hover .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg); }
 
-#mobile-nav-wrap nav a {
-  font-size: 1.125em; }
+.flip-container:hover .front, .flip-container.hover .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
 
-#mobile-nav-wrap nav > ul > li > a {
-  font-weight: bold; }
+.flip-container, .front, .back {
+  width: 340px;
+  height: 300px;
+  border-radius: 20px; }
 
-#mobile-nav-wrap nav ul ul {
-  margin: 20px 0 50px 15px; }
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  background: #ebf2f5;
+  z-index: 2; }
+
+.back {
+  background: #333;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+/* Footer */
+#footer-wrap {
+  background: #1f1f1f; }
+  #footer-wrap .site-footer {
+    width: 1081px;
+    background: #1f1f1f;
+    padding: 5px 0 2px; }
+    #footer-wrap .site-footer p {
+      font: 1em "Open Sans", sans-serif;
+      font-weight: 300;
+      color: #d2d3d5;
+      line-height: 1; }
 
 /* ==========================================================================
    Print styles

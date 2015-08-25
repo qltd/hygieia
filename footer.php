@@ -10,11 +10,13 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<div id="footer-wrap">
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info">
+				<p>&copy;<?php echo date('Y'); ?> <strong>HYGIEIA</strong> | Privacy Policy |  CE d-Nav&trade; is not available in the US</p>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #footer-wrap -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

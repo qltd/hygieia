@@ -130,6 +130,11 @@ add_action( 'widgets_init', 'hygieia_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hygieia_scripts() {
+
+  wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic');
+
+  wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+
   wp_enqueue_style( '_m-style', get_stylesheet_uri() );
 
   wp_enqueue_script( '_m-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

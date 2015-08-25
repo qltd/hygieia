@@ -1,12 +1,13 @@
 $baseFontSize: 16;
 $baseLineHeight: 1;
-$primaryFont: Helvetica, sans-serif;
+$primaryFont: "Open Sans", sans-serif;
 $secondaryFont: Times, serif;
-$bodyFont: Arial, sans-serif;
+$bodyFont: $primaryFont;
 
-$primaryColor: blue;
-$secondaryColor: purple;
+$primaryColor: lightblue;
+$secondaryColor: lightgreen;
 
 $linkColor: pink;
-$linkHover: orange;
+$linkHover: #f59f1a;
 
+$siteWidth: 1081px;
