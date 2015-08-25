@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _m
+ * @package hygieia
  */
 
 get_header(); ?>

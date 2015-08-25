@@ -41,3 +41,5 @@ config.codekit
 # Directories *
 ###############
 /node_modules
+/.sass-cache
+.sass-cache

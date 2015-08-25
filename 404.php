@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package _m
+ * @package hygieia
  */
 
 get_header(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php if ( _m_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+					<?php if (hygieia_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', '_s' ); ?></h2>
 						<ul>
