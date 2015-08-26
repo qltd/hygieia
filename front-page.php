@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="hero-unit">
-	<img src="http://lorempixel.com/output/nature-q-c-1081-603-4.jpg" />
+	<img src="http://dummyimage.com/1400x603/222/fff.jpg" />
 </section>
 
 <section class="body-content">
@@ -16,7 +16,7 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front
+					front 1
 				</div>
 				<div class="back">
 					back
@@ -27,7 +27,7 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front
+					front 2
 				</div>
 				<div class="back">
 					back
@@ -38,7 +38,7 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front
+					front 3
 				</div>
 				<div class="back">
 					back
@@ -62,39 +62,44 @@
 <section class="case-study">
 	<div class="centered">
 		<div class="left-col">
-			What Success Looks Like
+			<?php the_field('case_study_text'); ?><br />
+			<a href="<?php the_field('case_study_link'); ?>" class="btn">View Case Study</a>
 		</div>
 		<div class="right-col">
-			// YouTube Video
+			<?php the_field('case_study_video'); ?>
 		</div>
 	</div>
 </section>
 
 <section class="news-feed">
-	<h3>What are people saying?</h3>
-	<ul class="feed-list">
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
-	</ul>
-	<a href="#" class="btn">More News</a>
+	<div class="centered">
+		<h3>What are people saying?</h3>
+		<ul class="feed-list">
+			<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+			<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+		</ul>
+		<a href="#" class="btn">More News</a>
+	</div>
 </section>
 
 <section class="event-feed">
-	<h2>See d-Nav In Action</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh. Duis eu lorem eu leo vulputate pellentesque. Aenean ut nibh tortor. Phasellus id velit a nisl suscipit tempor. Quisque a aliquam neque. Pellentesque viverra, sem sed porta gravida, enim nunc congue urna, nec lacinia nisl diam eget lectus. </p>
+	<?php the_field('events_content'); ?>
 	<h4>Upcoming Events</h4>
 	<ul class="feed-lsit">
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
-		<li><span class="date">January 14, 2013</span> Lorem Ipsum</li>
+		<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+			<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat nibh.</li>
+			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
 	</ul>
 </section>
 
 <section class="contact-callout">
-	<h3>Let's change the world, together.</h3>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh. Duis eu lorem eu leo vulputate pellentesque. Aenean ut nibh tortor. Phasellus id velit a nisl suscipit tempor. Quisque a aliquam neque. Pellentesque viverra, sem sed porta gravida, enim nunc congue urna, nec lacinia nisl diam eget lectus. </p>
-	<a href="#" class="btn">Contact</a>
+	<div class="centered">
+		<h3>Let's change the world, together.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh. Duis eu lorem eu leo vulputate pellentesque. Aenean ut nibh tortor. Phasellus id velit a nisl suscipit tempor. Quisque a aliquam neque. Pellentesque viverra, sem sed porta gravida, enim nunc congue urna, nec lacinia nisl diam eget lectus. </p>
+		<br />
+		<a href="#" class="btn">Contact</a>
+	</div>
 </section>
 
 <?php get_footer(); ?>

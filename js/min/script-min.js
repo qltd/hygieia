@@ -1,1 +1,1 @@
-$(document).ready(function(){$("#burger").click(function(){$("#mobile-nav-wrap").slideToggle(600,"easeOutBounce")})});
+$(document).ready(function(){$("#burger").click(function(){$("#mobile-nav-wrap").slideToggle(600,"easeOutBounce")}),$(".flip-container").click(function(){console.log("hi"),$(this).toggleClass("hover")})});

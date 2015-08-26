@@ -1,13 +1,19 @@
+/* Fonts */
 $baseFontSize: 16;
 $baseLineHeight: 1;
 $primaryFont: "Open Sans", sans-serif;
 $secondaryFont: Times, serif;
 $bodyFont: $primaryFont;
 
-$primaryColor: lightblue;
-$secondaryColor: lightgreen;
 
+/* Colors */
+$primaryColor: #333;
+$secondaryColor: #747474;
 $linkColor: pink;
 $linkHover: #f59f1a;
 
-$siteWidth: 1081px;
+
+/* Layout */
+$siteWidth: 1280px;
+$sitePadding: '0 100px';
+
