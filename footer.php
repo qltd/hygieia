@@ -13,7 +13,7 @@
 	<div id="footer-wrap">
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
-				<p>&copy;<?php echo date('Y'); ?> <strong>HYGIEIA</strong> | Privacy Policy |  CE d-Nav&trade; is not available in the US</p>
+				<p>&copy;<?php echo date('Y'); ?> <strong>HYGIEIA</strong> | <a href="<?php echo get_permalink(49); ?>">Privacy Policy</a> |  CE d-Nav&trade; is not available in the US</p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #footer-wrap -->

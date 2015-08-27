@@ -216,27 +216,32 @@ h1 {
 
 h2 {
   font-size: 2em;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0; }
 
 h3 {
   font-size: 1.875em;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   font-weight: 400; }
 
 h4 {
   font-size: 1.625em;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0; }
 
 h5 {
   font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0; }
 
 h6 {
   font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0; }
 
@@ -254,7 +259,7 @@ li {
   margin-bottom: 7px; }
 
 a {
-  color: pink;
+  color: #333;
   text-decoration: none;
   transition: all .3s ease; }
 
@@ -324,6 +329,8 @@ a:hover {
         color: #f59f1a; }
       .main-navigation ul li:hover ul {
         display: block; }
+  .main-navigation #primary-menu > li:last-child a {
+    font-weight: bold; }
   .main-navigation ul.sub-menu {
     display: none;
     position: absolute;
@@ -345,7 +352,11 @@ a:hover {
   width: 100%;
   background: black;
   text-align: center;
-  line-height: 0; }
+  line-height: 0;
+  max-height: 603px;
+  overflow: hidden; }
+  .hero-unit video {
+    width: 100%; }
   @media (max-width: 1400px) {
     .hero-unit img {
       width: 100%;
@@ -452,18 +463,43 @@ a:hover {
   border: 1px solid #ebf2f5; }
 
 .front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   -webkit-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   background: #ebf2f5;
   z-index: 2; }
+  .front h5 {
+    font-size: 1.375em;
+    font-weight: 300; }
+  .front svg {
+    width: 134px;
+    height: 134px;
+    margin-bottom: 20px; }
+  .front path, .front polygon {
+    fill: #b32d33; }
 
 .back {
+  display: flex;
+  align-items: flex-end;
+  justfify-content: flex-end;
+  color: #bbb;
+  padding: 20px;
   background: #333;
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -o-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   transform: rotateY(-180deg); }
+  .back p {
+    font-size: 0.875em;
+    line-height: 1.8; }
+  .back h2, .back h3, .back h4, .back h5, .back h6 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.375em; }
 
 .front:hover, .back:hover {
   border: 1px solid #f59f1a;
@@ -494,7 +530,7 @@ a:hover {
   color: white;
   padding: 15px 0 45px; }
   .callout p {
-    line-height: 1.2;
+    line-height: .7;
     font-size: 1.5em; }
 
 .case-study {
@@ -592,6 +628,10 @@ a:hover {
       font-weight: 300;
       color: #d2d3d5;
       line-height: 1; }
+    #footer-wrap .site-footer a {
+      color: #d2d3d5; }
+      #footer-wrap .site-footer a:hover {
+        color: #f59f1a; }
 
 /* ==========================================================================
    Print styles

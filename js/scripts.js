@@ -11,4 +11,11 @@
     });
 
 
+$('video').on('ended', function () {
+	console.log('reloading');
+  this.load();
+  this.play();
+});
+
+
 })(jQuery); // document.ready

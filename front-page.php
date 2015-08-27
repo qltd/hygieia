@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 <section class="hero-unit">
-	<img src="http://dummyimage.com/1400x603/222/fff.jpg" />
+<!-- 	<img src="http://dummyimage.com/1400x603/222/fff.jpg" /> -->
+<video src="<?php bloginfo('template_directory'); ?>/img/seascape-loop.mp4" preload autoplay x`x muted="muted"></video>
 </section>
 
 <section class="body-content">
@@ -16,10 +17,16 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front 1
+					<div>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/physicians-icon.svg'); ?>
+						<h5>For Patients</h5>
+					</div>
 				</div>
 				<div class="back">
-					back
+					<div>
+						<h5>For Patients</h5>
+						<?php the_field('for_patients_content'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -27,10 +34,16 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front 2
+					<div>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/physicians-icon.svg'); ?>
+						<h5>For Physicians</h5>
+					</div>
 				</div>
 				<div class="back">
-					back
+					<div>
+						<h5>For Physicians</h5>
+						<?php the_field('for_physicians_content'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -38,10 +51,16 @@
 		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 			<div class="flipper">
 				<div class="front">
-					front 3
+					<div>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/payers-icon.svg'); ?>
+						<h5>For Payers</h5>
+					</div>
 				</div>
 				<div class="back">
-					back
+					<div>
+						<h5>For Payers</h5>
+						<?php the_field('for_payers_content'); ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -53,9 +72,8 @@
 
 <section class="callout red">
 	<div class="centered">
-		<p>d-Nav helps patients reach their target HbA1c.<br />
-		We have the clinical evidence to prove it.</p>
-		<a href="#" class="btn">See It Now</a>
+		<?php the_field('callout_text'); ?>
+		<a href="<?php the_field('callout_link'); ?>" class="btn"><?php the_field('callout_button_text'); ?></a>
 	</div>
 </section>
 
@@ -79,7 +97,7 @@
 			<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
 			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
 		</ul>
-		<a href="#" class="btn">More News</a>
+		<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
 	</div>
 </section>
 
@@ -95,10 +113,9 @@
 
 <section class="contact-callout">
 	<div class="centered">
-		<h3>Let's change the world, together.</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh. Duis eu lorem eu leo vulputate pellentesque. Aenean ut nibh tortor. Phasellus id velit a nisl suscipit tempor. Quisque a aliquam neque. Pellentesque viverra, sem sed porta gravida, enim nunc congue urna, nec lacinia nisl diam eget lectus. </p>
+		<?php the_field('contact_content'); ?>
 		<br />
-		<a href="#" class="btn">Contact</a>
+		<a href="<?php echo get_permalink(47); ?>" class="btn">Contact</a>
 	</div>
 </section>
 

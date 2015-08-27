@@ -16,11 +16,11 @@ html, body {
 
 /* Text */
 h1 { font-size: em(34); }
-h2 { font-size: em(32); @include no-margin; }
-h3 { font-size: em(30); @include no-margin; font-weight: 400; }
-h4 { font-size: em(26); @include no-margin; }
-h5 { font-size: em(24); @include no-margin; }
-h6 { font-size: em(24); @include no-margin; }
+h2 { font-size: em(32); font-family: $primaryFont; @include no-margin; }
+h3 { font-size: em(30); font-family: $primaryFont; @include no-margin; font-weight: 400; }
+h4 { font-size: em(26); font-family: $primaryFont; @include no-margin; }
+h5 { font-size: em(24); font-family: $primaryFont; @include no-margin; }
+h6 { font-size: em(24); font-family: $primaryFont; @include no-margin; }
 p { font-size: em(16); line-height: 1.5; }
 ol { padding-left: 17px; }
 ul { list-style: none; @extend ol }
@@ -95,6 +95,9 @@ a:hover { text-decoration: none; color: $linkHover; }
 			}
 		}
 	}
+	#primary-menu {
+		> li:last-child a { font-weight: bold; }
+	}
 	ul.sub-menu {
 		display: none;
 		position: absolute;
@@ -121,6 +124,9 @@ a:hover { text-decoration: none; color: $linkHover; }
 	background: black;
 	text-align: center;
 	line-height: 0;
+	max-height: 603px;
+	overflow: hidden;
+	video { width: 100%;  }
 	img {
 		@include responsive('1400px') { width: 100%; height: auto; }
 	}
@@ -254,6 +260,13 @@ a:hover { text-decoration: none; color: $linkHover; }
 }
 
 .front {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	h5 { font-size: em(22); font-weight: 300; }
+	svg { width: 134px; height: 134px; margin-bottom: 20px; }
+	path, polygon { fill: #b32d33; }
+	text-align: center;
 	-webkit-transform: rotateY(0deg);
 	-ms-transform: rotateY(0deg);
 	background: #ebf2f5;
@@ -261,12 +274,19 @@ a:hover { text-decoration: none; color: $linkHover; }
 }
 
 .back {
+	display: flex;
+	align-items: flex-end;
+	justfify-content: flex-end;
+	color: #bbb;
+	padding: 20px;
 	background: #333;
 	-webkit-transform: rotateY(-180deg);
     	-moz-transform: rotateY(-180deg);
     	-o-transform: rotateY(-180deg);
     	-ms-transform: rotateY(-180deg);
     	transform: rotateY(-180deg);
+	p { 	font-size: em(14); line-height: 1.8; }
+	h2, h3, h4, h5, h6 { color: #fff; font-weight: 300; font-size: em(22); }
 }
 
 .front:hover, .back:hover { border: 1px solid $linkHover; cursor: pointer; }
@@ -296,7 +316,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 	background: #b32d33;
 	color: white;
 	padding: 15px 0 45px;
-	p { line-height: 1.2; font-size: em(24); }
+	p { line-height: .7; font-size: em(24); }
 }
 
 
@@ -379,6 +399,10 @@ a:hover { text-decoration: none; color: $linkHover; }
 			font-weight: 300;
 			color: #d2d3d5;
 			line-height: 1;
+		}
+		a {
+			color: #d2d3d5;
+			&:hover { color: $linkHover; }
 		}
 	}
 }
