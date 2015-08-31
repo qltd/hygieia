@@ -10,6 +10,12 @@
         $(this).toggleClass('hover');
     });
 
+   $('.menu-toggle').click(function(){
+     $(this).toggleClass('open');
+     $('.main-navigation').toggleClass('open');
+      return false;
+    });
+
 
 $('video').on('ended', function () {
 	console.log('reloading');

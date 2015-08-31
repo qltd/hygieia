@@ -5,11 +5,13 @@
 
 
 /* Settings */
-html, body {
+html {
   background: white;
   color: black;
   font: $baseFontSize $baseLineHeight $bodyFont;
-
+  @include responsive('1000px') {
+ 	font-size: 14px;
+  }
 }
 
 
@@ -40,10 +42,19 @@ a:hover { text-decoration: none; color: $linkHover; }
 	z-index: 2;
 	box-shadow: 0 0 10px rgba(0,0,0,.5);
 	width: 100%;
-	header { @extend %center-block; width: 100%; max-width: $siteWidth; padding: 0 100px; @extend %clearfix; }
+	header {
+		@extend %center-block;
+		width: 100%;
+		max-width: $siteWidth;
+		padding: 0 100px;
+		@extend %clearfix;
+		@include responsive('1000px'){
+			padding: 0 40px;
+		}
+	}
 	.site-description {
 		width: 100%;
-		background: #b42c33;
+		background: $red;
 		font: em(14) $primaryFont;
 		text-transform: uppercase;
 		color: white;
@@ -62,7 +73,32 @@ a:hover { text-decoration: none; color: $linkHover; }
 
 
 /* Navigation */
-#burger { font-size: 3em; float: right; line-height: 0; margin: -6px 25px 0 0; padding: 0; display: none; }
+.menu-toggle {
+	font-size: 3em;
+	float: right;
+	line-height: 0;
+	margin: -10px 0 0 0;
+	z-index: 999;
+	position: relative;
+	padding: 0;
+	display: none;
+	background: none;
+   	border: none;
+    	outline: none;
+	width: 35px;
+	height: 50px;
+	@include responsive('800px'){
+		display: block;
+	}
+	 .bars:after, .bars:before{content:"";position:absolute;left:0;top:-10px}
+	 .bars:after{top:10px}
+	 .bars{position:relative;display:block}
+	 .bars, .bars:after, .bars:before{border-radius: 1px; width:100%;height:5px;background-color:$red;transition:all .3s;backface-visibility:hidden; }
+	&.open .bars{background-color:transparent}
+	&.open .bars:before{transform:rotate(45deg) translate(4px,7px); background-color: #fff; }
+	&.open .bars:after{transform:rotate(-45deg) translate(7px,-11px); background-color: #fff; }
+	&.open + .menu{opacity:1;visibility:visible}
+}
 
 
 .main-navigation {
@@ -108,7 +144,32 @@ a:hover { text-decoration: none; color: $linkHover; }
 			a { white-space: nowrap; }
 		}
 	}
-
+	@include responsive('800px'){
+		ul {
+			background: $red;
+			padding: 60px 0;
+			position: absolute;
+			transition: all .7s ease;
+			z-index: 2;
+			top: -600%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-size: 2.4em;
+			li {
+				float: none;
+				a {
+					color: #fff;
+				}
+			}
+		}
+		&.open {
+			ul {
+				display: block;
+				top: 0;
+			}
+		}
+	}
  }
 
 /* Content */
@@ -197,16 +258,25 @@ a:hover { text-decoration: none; color: $linkHover; }
 	}
 	@include responsive('994px') {
 		width: 220px;
-		height: 200px;
+		height: 220px;
+		svg {
+			padding: 15px 15px 0;
+		}
 	}
 	@include responsive('814px') {
 		width: 180px;
 		height: 180px;
+		svg {
+			padding: 10px 25px 0;
+		}
 	}
 	@include responsive('694px'){
 		width: 100%;
 		height: 220px;
 		margin-bottom: 30px;
+		svg {
+			padding: 3px 0 0;
+		}
 	}
 }
 
@@ -263,14 +333,14 @@ a:hover { text-decoration: none; color: $linkHover; }
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	h5 { font-size: em(22); font-weight: 300; }
-	svg { width: 134px; height: 134px; margin-bottom: 20px; }
-	path, polygon { fill: #b32d33; }
 	text-align: center;
 	-webkit-transform: rotateY(0deg);
 	-ms-transform: rotateY(0deg);
 	background: #ebf2f5;
 	z-index: 2;
+	h5 { font-size: em(22); font-weight: 300; }
+	svg { width: 100%; height: 100%; max-width: 134px; max-height: 134px; margin-bottom: 20px; }
+	path, polygon { fill: #b32d33; }
 }
 
 .back {
@@ -285,8 +355,11 @@ a:hover { text-decoration: none; color: $linkHover; }
     	-o-transform: rotateY(-180deg);
     	-ms-transform: rotateY(-180deg);
     	transform: rotateY(-180deg);
-	p { 	font-size: em(14); line-height: 1.8; }
+	p { font-size: em(14); line-height: 1.8; }
 	h2, h3, h4, h5, h6 { color: #fff; font-weight: 300; font-size: em(22); }
+	@include responsive('1174px') {
+		p { line-height: 1.4; }
+	}
 }
 
 .front:hover, .back:hover { border: 1px solid $linkHover; cursor: pointer; }
@@ -317,15 +390,42 @@ a:hover { text-decoration: none; color: $linkHover; }
 	color: white;
 	padding: 15px 0 45px;
 	p { line-height: .7; font-size: em(24); }
+	@include responsive('700px'){
+		padding: 15px 7% 45px;
+		p { line-height: 1.2; font-size: em(20); }
+	}
 }
 
 
 .case-study {
 	color: $secondaryColor;
 	padding: 70px 0px;
-	.left-col { float: left; width: 40%; padding: 0 7% 0 100px; }
-	.right-col { float: right; width: 57%; }
-	h4 { font-size: em(18); margin-bottom: 0px; color: $primaryColor; }
+	.left-col {
+		float: left;
+		width: 40%;
+		padding: 0 7% 0 100px;
+	 	@include responsive('900px'){
+	 		width: 100%;
+	 		text-align: center;
+	 		margin-bottom: 40px;
+	 	}
+	 }
+	.right-col {
+		float: right;
+		width: 57%;
+		@include responsive('900px'){
+			width: 100%;
+			padding: 0 7%;
+		}
+	}
+	h4 {
+		font-size: em(18);
+		margin-bottom: 0px;
+		color: $primaryColor;
+		@include responsive('900px'){
+			font-size: em(22);
+		}
+	}
 	p { font-size: em(14); }
 	iframe { width: 98%; max-height: 400px }
 	.btn {
