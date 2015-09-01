@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
 <section class="hero-unit">
-<!-- 	<img src="http://dummyimage.com/1400x603/222/fff.jpg" /> -->
-<video src="<?php bloginfo('template_directory'); ?>/img/seascape-loop.mp4" preload autoplay x`x muted="muted"></video>
+	<img src="http://dummyimage.com/1400x603/222/fff.jpg" />
 </section>
 
 <section class="body-content">
