@@ -98,14 +98,16 @@
 </section>
 
 <section class="news-feed">
-	<div class="right-col">
-		<h3>What are people saying?</h3>
-		<ul class="feed-list">
-			<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-			<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-		</ul>
-		<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
+	<div class="centered">
+		<div class="right-col">
+			<h3>What are people saying?</h3>
+			<ul class="feed-list">
+				<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+				<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+				<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+			</ul>
+			<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
+		</div>
 	</div>
 </section>
 

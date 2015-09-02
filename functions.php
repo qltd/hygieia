@@ -9,9 +9,9 @@
 if( function_exists('acf_add_options_page') ) {
 
   acf_add_options_page(array(
-    'page_title'  => 'Footer Content',
-    'menu_title'  => 'Footer Content',
-    'menu_slug'   => 'footer-content',
+    'page_title'  => 'Global Content',
+    'menu_title'  => 'Global Content',
+    'menu_slug'   => 'global-content',
     'capability'  => 'edit_posts',
   ));
 
