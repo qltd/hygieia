@@ -1,13 +1,22 @@
 <?php get_header(); ?>
 
-<section class="hero-unit">
-	<img src="http://dummyimage.com/1400x603/222/fff.jpg" />
+<section class="hero-unit" style="background: url(<?php the_field('hero_image'); ?>) no-repeat center center; background-size: cover;">
+	<h2><?php the_field('hero_text'); ?></h2>
 </section>
 
 <section class="body-content">
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-     		<?php the_content(); ?>
-	<?php endwhile; ?>
+	<div class="centered">
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	     		<?php the_content(); ?>
+		<?php endwhile; ?>
+
+		<div class="left">
+			<?php the_field('left_column_content'); ?>
+		</div>
+		<div class="right">
+			<?php the_field('right_column_content'); ?>
+		</div>
+	</div>
 </section>
 
 <section class="flip-cards">
@@ -17,7 +26,7 @@
 			<div class="flipper">
 				<div class="front">
 					<div>
-						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/physicians-icon.svg'); ?>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/patients-icon.svg'); ?>
 						<h5>For Patients</h5>
 					</div>
 				</div>
@@ -89,7 +98,7 @@
 </section>
 
 <section class="news-feed">
-	<div class="centered">
+	<div class="right-col">
 		<h3>What are people saying?</h3>
 		<ul class="feed-list">
 			<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
@@ -97,6 +106,12 @@
 			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
 		</ul>
 		<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
+	</div>
+</section>
+
+<section class="callout">
+	<div class="centered">
+		<?php the_field('callout_text2'); ?>
 	</div>
 </section>
 
@@ -114,7 +129,7 @@
 	<div class="centered">
 		<?php the_field('contact_content'); ?>
 		<br />
-		<a href="<?php echo get_permalink(47); ?>" class="btn">Contact</a>
+		<a href="<?php echo get_permalink(47); ?>" class="btn">Apply Now</a>
 	</div>
 </section>
 

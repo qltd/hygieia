@@ -63,11 +63,23 @@ a:hover { text-decoration: none; color: $linkHover; }
 		padding: 6px 0;
 		letter-spacing: 2px;
 		font-weight: 300;
+		span {
+			color: $linkHover;
+		}
 	}
-	.site-title {
-		float: left;
-		img { width: 162px; height: 48px; }
-	}
+
+}
+
+.site-title {
+	float: left;
+	margin-top: 20px;
+	display: block;
+	width: 162px;
+	height: 58px;
+	#RedLeaf { fill: $red; }
+	#OrangeLeaf { fill: $linkHover; }
+	#Name { fill: $red; }
+	#Tagline { fill: white; }
 }
 
 
@@ -183,13 +195,17 @@ a:hover { text-decoration: none; color: $linkHover; }
 .hero-unit {
 	width: 100%;
 	background: black;
-	text-align: center;
 	line-height: 0;
+	height: 603px;
 	max-height: 603px;
-	overflow: hidden;
-	video { width: 100%;  }
-	img {
-		@include responsive('1400px') { width: 100%; height: auto; }
+	h2 {
+		margin: 0 auto;
+		width: $siteWidth;
+		font-weight: 400;
+		padding: 135px 100px;
+		font-size: em(48);
+		color: #382d23;
+		text-shadow: 0 0 8px #f5c573;
 	}
 }
 
@@ -198,6 +214,29 @@ a:hover { text-decoration: none; color: $linkHover; }
 	width: 100%;
 	max-width: $siteWidth;
 	@extend %center-block;
+}
+
+
+.body-content {
+	font: em(18) $primaryFont;
+	background: #fff url(../img/body-content-bg.png) repeat center center;
+	@extend %clearfix;
+	text-shadow: 0 0 4px #fff;
+	padding: 40px 0;
+	.centered {
+		padding: 0 100px;
+	}
+	p { margin: 0 0 4px 0; }
+	.left, .right {
+		float: left;
+		font-size: em(14);
+		width: 47%;
+		margin-top: 20px;
+	}
+	.right {
+		margin-left: 6%;
+		float: right;
+	}
 }
 
 
@@ -373,9 +412,17 @@ a:hover { text-decoration: none; color: $linkHover; }
 	padding: 10px 20px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
+	position: relative;
 	font: 1rem $primaryFont;
 	font-weight: 400;
-	&:hover { border-color: $linkHover; color: #fff; margin-top: -2px; margin-bottom: 2px; }
+	&:after { transition: all 0.3s ease; content: "»"; font-size: em(25); opacity: 0; position: absolute; right: 20%; top: 1px; }
+	&:hover {
+		border-color: $linkHover;
+		color: #fff;
+		padding-right: 40px;
+		&:after {  right: 7%; opacity: 1; }
+	}
+
 }
 
 
@@ -384,16 +431,24 @@ a:hover { text-decoration: none; color: $linkHover; }
 /* Call out */
 .callout {
 	text-align: center;
-	font: em(22) $primaryFont;
-	font-weight: 300;
-	background: #b32d33;
-	color: white;
-	padding: 15px 0 45px;
-	p { line-height: .7; font-size: em(24); }
+	font-family: $primaryFont;
+	padding: 70px;
+	color: #747474;
+	h2 { font-weight: 300; color: #333; }
+	a { color: $linkHover; &:hover { color: $red; } }
 	@include responsive('700px'){
 		padding: 15px 7% 45px;
 		p { line-height: 1.2; font-size: em(20); }
 	}
+	&.red {
+		background: #b32d33;
+		color: #fff;
+		font: em(22) $primaryFont;
+		padding: 15px 0 45px;
+		p { line-height: .7; font-size: em(24); font-weight: 300; }
+		a { color: white; &:hover { color: white; } }
+	}
+	.centered { max-width: 1081px; }
 }
 
 
@@ -439,27 +494,27 @@ a:hover { text-decoration: none; color: $linkHover; }
 
 
 .news-feed {
-	background: #0c141d;
+	background: #a4aad6 url(../img/news-bg.png) repeat center center;
 	color: white;
 	font: em(16) $primaryFont;
 	padding: 42px 0px;
-	text-align: center;
+	.right-col { width: 531px; float: right; padding-right: 20px; }
+	@extend %clearfix;
 	h3 { color: #fff; font-weight: 300; text-transform: capitalize; }
 	ul {
-		padding: 0 100px;
-		text-align: left;
+		padding: 0px;
 		margin-bottom: 30px;
 		li {
 			margin-bottom: 14px;
 			font-size: em(14);
 		}
-		.date { font-weight: 400; font-size: em(18); display: inline-block;  width: 170px; }
+		.date { font-weight: 400; font-size: em(18); display: inline-block;  margin-right: 20px;  }
 	}
 }
 
 .event-feed {
-	background: url(../img/honeycomb-bg.jpg) no-repeat center center;
-	background-size: cover;
+	background: url(../img/events-bg.png) repeat center center, url(../img/events-water-bg.jpg) no-repeat center center;
+	background-size: auto, cover;
 	color: #fff;
 	font: $primaryFont;
 	font-weight: 300;
@@ -475,7 +530,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 
 
 .contact-callout {
-	background: #283139;
+	background: #a4aad6;
 	color: #fff;
 	text-align: center;
 	font-family: $primaryFont;
@@ -490,10 +545,6 @@ a:hover { text-decoration: none; color: $linkHover; }
 #footer-wrap {
 	background: #1f1f1f;
 	.site-footer {
-		width: $siteWidth;
-		@extend %center-block;
-		background: #1f1f1f;
-		padding: 5px 100px 2px;
 		p {
 			font: 1em $primaryFont;
 			font-weight: 300;
@@ -504,6 +555,29 @@ a:hover { text-decoration: none; color: $linkHover; }
 			color: #d2d3d5;
 			&:hover { color: $linkHover; }
 		}
+	}
+	.footer-top {
+		background: #333;
+		@extend %clearfix;
+		.centered {
+			@extend %center-block;
+			padding: 35px 100px;
+			width: $siteWidth;
+		}
+	}
+	.footer-bottom {
+		background: #1f1f1f;
+		.site-info {
+			width: $siteWidth;
+			padding: 6px 100px;
+			@extend %center-block;
+		}
+	}
+	.site-title {
+		margin-right: 70px;
+		width: 180px;
+		margin-top: 0;
+		#Tagline path, #Name path { fill: #ffffff }
 	}
 }
 

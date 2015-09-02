@@ -22,10 +22,18 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<div id="masthead-wrap">
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<h2 class="site-description">
+			<?php if (get_field('news_alert')): ?>
+
+			<?php else: ?>
+				<span class="orange">Hygieia:</span> A better way to use insulin
+			<?php endif; ?>
+		</h2>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_directory'); ?>/img/hygieia-logo-optimized.svg" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
+					<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/hygieia-logo.svg'); ?>
+				</a>
 
 			</div><!-- .site-branding -->
 
