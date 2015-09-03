@@ -23,8 +23,8 @@
 
 	<div id="masthead-wrap">
 		<h2 class="site-description">
-			<?php if (get_field('news_alert')): ?>
-
+			<?php if (get_field('header_news_alert', 'options')): ?>
+				<?php the_field('header_news_alert', 'options'); ?>
 			<?php else: ?>
 				<span class="orange">Hygieia:</span> A better way to use insulin
 			<?php endif; ?>
