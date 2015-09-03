@@ -18,8 +18,10 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
 						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/hygieia-logo.svg'); ?>
 					</a>
-					<p><strong>US:</strong> 6267 Jackson Road, Suite G | Ann Arbor, MIchigan 48103 | USA | +1.734.527.9160</p>
-					<p><strong>UK:</strong> 6267 Jackson Road, Suite G | Ann Arbor, MIchigan 48103 | UK | +44 (0) 7474 673172</p>
+					<div>
+						<p><strong>US:</strong> 6267 Jackson Road, Suite G | Ann Arbor, MIchigan 48103 | USA | +1.734.527.9160</p>
+						<p><strong>UK:</strong> 6267 Jackson Road, Suite G | Ann Arbor, MIchigan 48103 | UK | +44 (0) 7474 673172</p>
+					</div>
 				</div>
 			</div>
 			<div class="footer-bottom">

@@ -10,7 +10,7 @@ html {
   color: black;
   font: $baseFontSize $baseLineHeight $bodyFont;
   @include responsive('1000px') {
- 	font-size: 14px;
+
   }
 }
 
@@ -197,15 +197,27 @@ a:hover { text-decoration: none; color: $linkHover; }
 	background: black;
 	line-height: 0;
 	height: 603px;
-	max-height: 603px;
+	@include responsive('900px'){
+		height: 400px;
+	}
 	h2 {
 		margin: 0 auto;
-		width: $siteWidth;
+		width: 100%;
+		max-width: $siteWidth;
 		font-weight: 400;
 		padding: 135px 100px;
 		font-size: em(48);
+		line-height: 1.3;
 		color: #382d23;
 		text-shadow: 0 0 8px #f5c573;
+		@include responsive('900px'){
+			text-align: center;
+			padding: 40px;
+		}
+		@include responsive('500px'){
+			font-size: em(35);
+			padding: 30px 40px;
+		}
 	}
 }
 
@@ -219,12 +231,15 @@ a:hover { text-decoration: none; color: $linkHover; }
 
 .body-content {
 	font: em(18) $primaryFont;
-	background: #fff url(../img/body-content-bg.png) repeat center center;
+	background: #fff url(../img/body-content-bg-fade.png) repeat center center;
 	@extend %clearfix;
 	text-shadow: 0 0 4px #fff;
 	padding: 40px 0;
 	.centered {
 		padding: 0 100px;
+		@include responsive('900px'){
+			padding: 0 40px;
+		}
 	}
 	p { margin: 0 0 4px 0; }
 	.left, .right {
@@ -232,6 +247,9 @@ a:hover { text-decoration: none; color: $linkHover; }
 		font-size: em(14);
 		width: 47%;
 		margin-top: 20px;
+		@include responsive('800px'){
+			width: 100%;
+		}
 	}
 	.right {
 		margin-left: 6%;
@@ -292,31 +310,16 @@ a:hover { text-decoration: none; color: $linkHover; }
 		height: 280px;
 	}
 	@include responsive('1114px') {
-		width: 280px;
+		width: 100%;
+		margin-bottom: 40px;
 		height: 260px;
 	}
-	@include responsive('994px') {
-		width: 220px;
-		height: 220px;
-		svg {
-			padding: 15px 15px 0;
-		}
-	}
-	@include responsive('814px') {
-		width: 180px;
-		height: 180px;
-		svg {
-			padding: 10px 25px 0;
-		}
-	}
-	@include responsive('694px'){
+	@include responsive('331px') {
 		width: 100%;
-		height: 220px;
-		margin-bottom: 30px;
-		svg {
-			padding: 3px 0 0;
-		}
+		margin-bottom: 40px;
+		height: 320px;
 	}
+
 }
 
 .flipper {
@@ -399,6 +402,21 @@ a:hover { text-decoration: none; color: $linkHover; }
 	@include responsive('1174px') {
 		p { line-height: 1.4; }
 	}
+	@include responsive('1114px') {
+		p { line-height: 1.6; font-size: em(16); }
+	}
+	@include responsive('670px') {
+		p { font-size: em(14); }
+	}
+	@include responsive('472px') {
+		padding: 10px;
+		h2, h3, h4, h5, h6 { font-size: em(18); }
+		p { font-size: em(13);  line-height: 1.4; }
+	}
+	@include responsive('422px') {
+		h2, h3, h4
+		p { font-size: em(12); }
+	}
 }
 
 .front:hover, .back:hover { border: 1px solid $linkHover; cursor: pointer; }
@@ -436,17 +454,20 @@ a:hover { text-decoration: none; color: $linkHover; }
 	color: #747474;
 	h2 { font-weight: 300; color: #333; }
 	a { color: $linkHover; &:hover { color: $red; } }
-	@include responsive('700px'){
-		padding: 15px 7% 45px;
+	@include responsive('740px'){
+		padding: 45px 7% 45px;
 		p { line-height: 1.2; font-size: em(20); }
 	}
 	&.red {
 		background: #b32d33;
 		color: #fff;
 		font: em(22) $primaryFont;
-		padding: 15px 0 45px;
-		p { line-height: .7; font-size: em(24); font-weight: 300; }
+		p { line-height: 1.2; font-size: em(24); font-weight: 300; margin: 0 0 20px; }
 		a { color: white; &:hover { color: white; } }
+		@include responsive('450px'){
+			font-size: em(18);
+			.btn { margin-top: 20px; }
+		}
 	}
 	.centered { max-width: 1081px; }
 }
@@ -461,6 +482,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 		padding: 0 7% 0 100px;
 	 	@include responsive('900px'){
 	 		width: 100%;
+	 		padding: 0 7%;
 	 		text-align: center;
 	 		margin-bottom: 40px;
 	 	}
@@ -498,7 +520,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 	color: white;
 	font: em(16) $primaryFont;
 	padding: 42px 0px;
-	.right-col { width: 531px; float: right; padding-right: 20px; }
+	.right-col { width: auto; max-width: 690px; float: right; padding: 40px; }
 	@extend %clearfix;
 	h3 { color: #fff; font-weight: 300; text-transform: capitalize; }
 	ul {
@@ -507,24 +529,34 @@ a:hover { text-decoration: none; color: $linkHover; }
 		li {
 			margin-bottom: 14px;
 			font-size: em(14);
+			@include responsive('540px'){
+				margin-bottom: 30px;
+			}
 		}
 		.date { font-weight: 400; font-size: em(18); display: inline-block;  margin-right: 20px;  }
 	}
 }
 
 .event-feed {
-	background: url(../img/events-bg.png) repeat center center, url(../img/events-water-bg.jpg) no-repeat center center;
-	background-size: auto, cover;
+	background: url(../img/events-water-bg.jpg) no-repeat center center;
+	background-size: cover;
 	color: #fff;
 	font: $primaryFont;
 	font-weight: 300;
 	text-align: center;
-	padding: 150px 200px;
+	padding: 150px 0px;
 	p { padding: 0 100px; }
 	h2 { font-weight: 300; font-size: em(42); }
 	h4 { font-size: em(17); font-weight: 300; text-transform: uppercase;  margin: 40px 0 20px; }
-	li { font-size: em(14); margin-bottom: 14px; }
+	li { font-size: em(14); margin-bottom: 14px; padding: 0 40px; }
 	.date { font-weight: 400; font-size: em(18); display: inline-block; margin-right: 10px; }
+	@include responsive('740px'){
+		padding: 50px 0px;
+		p { padding: 0 40px; }
+		li {
+			margin-bottom: 30px;
+		}
+	}
 }
 
 
@@ -534,12 +566,22 @@ a:hover { text-decoration: none; color: $linkHover; }
 	color: #fff;
 	text-align: center;
 	font-family: $primaryFont;
-	.centered { padding: 70px 100px; }
+	.centered {
+		padding: 70px 100px;
+		@include responsive('740px'){
+			padding: 50px 40px;
+		}
+	}
 }
 
 
 /* Page */
-#page-content { width: $siteWidth; margin: 0 auto; padding: 0 100px; }
+#page-content {
+	max-width: $siteWidth; margin: 0 auto; padding: 0 100px;
+	@include responsive('1000px'){
+		padding: 0 40px;
+	}
+}
 
 
 
@@ -553,7 +595,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 			font: 1em $primaryFont;
 			font-weight: 300;
 			color: #d2d3d5;
-			line-height: 1;
+			line-height: 1.5;
 		}
 		a {
 			color: #d2d3d5;
@@ -566,22 +608,47 @@ a:hover { text-decoration: none; color: $linkHover; }
 		.centered {
 			@extend %center-block;
 			padding: 35px 100px;
-			width: $siteWidth;
+			max-width: $siteWidth;
+			width: auto;
+			@extend %clearfix;
+			div { width: auto; max-width: 73%; float: left; }
+			@include responsive('1000px'){
+				padding: 30px 40px;
+			}
+			@include responsive('840px'){
+				div { max-width: 100%; text-align: center; float: none; }
+			}
 		}
 	}
 	.footer-bottom {
 		background: #1f1f1f;
 		.site-info {
-			width: $siteWidth;
+			width: auto;
+			max-width: $siteWidth;
 			padding: 6px 100px;
 			@extend %center-block;
+			@include responsive('1000px'){
+				padding: 6px 40px;
+				text-align: center;
+			}
+
 		}
 	}
 	.site-title {
-		margin-right: 70px;
-		width: 180px;
+		margin-right: 7%;
+		width: 20%;
 		margin-top: 0;
+		float: left;
 		#Tagline path, #Name path { fill: #ffffff }
+		@include responsive('946px'){
+			margin-top: 4%;
+		}
+		@include responsive('840px'){
+			margin: 0 auto 70px;
+			width: 100%;
+			max-width: 240px;
+			float: none;
+		}
 	}
 }
 
@@ -589,17 +656,36 @@ a:hover { text-decoration: none; color: $linkHover; }
 
 .leadership-grid {
 	list-style: none;
-	padding: 20px 0px;
+	padding: 20px 100px;
 	margin: 0 auto;
-	text-align: center;
 	width: 100%;
 	max-width: $siteWidth;
 	@extend %clearfix;
+
+	@include responsive('1292px'){
+		max-width: 1010px;
+	}
+
+	@include responsive('1000px'){
+		padding: 20px 40px;
+	}
+
+	@include responsive('807px'){
+		max-width: 550px;
+	}
+
+	@include responsive('547px'){
+		max-width: 280px;
+	}
+
 	li {
 		display: inline-block;
-		margin: 10px 37px;
+		margin: 10px 30px;
 		vertical-align: top;
 		height: 270px;
+		@include responsive('1021px'){
+			margin: 10px 2%;
+		}
 		a:hover {
 			color: #333;
 		}

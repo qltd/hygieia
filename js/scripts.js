@@ -507,8 +507,8 @@ var Grid = (function() {
                 };
 
             this.calcHeight();
-            this.$previewEl.css( 'height', this.height - 100 );
-            this.$item.css( 'height', this.itemHeight - 100 ).on( transEndEventName, onEndFn );
+            this.$previewEl.css( 'height', '500px' );
+            this.$item.css( 'height', '800px' ).on( transEndEventName, onEndFn );
 
             if( !support ) {
                 onEndFn.call();
