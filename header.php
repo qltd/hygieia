@@ -24,7 +24,10 @@
 	<div id="masthead-wrap">
 		<h2 class="site-description">
 			<?php if (get_field('header_news_alert', 'options')): ?>
-				<?php the_field('header_news_alert', 'options'); ?>
+				<?php
+					$alert = get_field('header_news_alert', 'options');
+					echo '<a href="' . get_permalink($alert->ID) . '">' . $alert->post_title . '</a>';
+				 ?>
 			<?php else: ?>
 				<span class="orange">Hygieia:</span> A better way to use insulin
 			<?php endif; ?>

@@ -601,6 +601,9 @@ a:hover { text-decoration: none; color: $linkHover; }
 			color: #d2d3d5;
 			&:hover { color: $linkHover; }
 		}
+		.ce { display: inline-block; height: 20px; width: 20px;
+			svg { fill: #fff; }
+		}
 	}
 	.footer-top {
 		background: #333;

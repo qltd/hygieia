@@ -861,6 +861,12 @@ a:hover {
     color: #d2d3d5; }
     #footer-wrap .site-footer a:hover {
       color: #f59f1a; }
+  #footer-wrap .site-footer .ce {
+    display: inline-block;
+    height: 20px;
+    width: 20px; }
+    #footer-wrap .site-footer .ce svg {
+      fill: #fff; }
   #footer-wrap .footer-top {
     background: #333; }
     #footer-wrap .footer-top .centered {

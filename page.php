@@ -16,7 +16,7 @@
             <?php $c=1; while(has_sub_field('management_team')): ?>
                 <?php $img = get_sub_field('image'); ?>
                 <li class="management">
-                    <a href="#" data-img="<?php echo $img['sizes']['leadership-thumb']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
+                    <a href="#" data-img="<?php echo $img['sizes']['leadership-full']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
                         <?php if ($c==1): ?><span class="section-title">Management Team</span><?php  $c++; endif; ?>
                         <img src="<?php echo $img['sizes']['leadership-thumb']; ?>" class="leadership-thumb"  />
                         <h3><?php the_sub_field('name'); ?></h3>
@@ -30,7 +30,7 @@
             <?php $c=1; while(has_sub_field('board_of_directors')): ?>
                 <?php $img = get_sub_field('image'); ?>
                 <li class="board">
-                    <a href="#" data-img="<?php echo $img['sizes']['leadership-thumb']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
+                    <a href="#" data-img="<?php echo $img['sizes']['leadership-full']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
                         <?php if ($c==1): ?><span class="section-title">Board of Directors</span><?php  $c++; endif; ?>
                         <img src="<?php echo $img['sizes']['leadership-thumb']; ?>" class="leadership-thumb" />
                         <h3><?php the_sub_field('name'); ?></h3>
@@ -44,7 +44,7 @@
             <?php $c=1; while(has_sub_field('clinical_advisors')): ?>
                 <?php $img = get_sub_field('image'); ?>
                 <li class="clinical">
-                    <a href="#" data-img="<?php echo $img['sizes']['leadership-thumb']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
+                    <a href="#" data-img="<?php echo $img['sizes']['leadership-full']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
                         <?php if ($c==1): ?><span class="section-title">Clinical Advisors</span><?php  $c++; endif; ?>
                         <img src="<?php echo $img['sizes']['leadership-thumb']; ?>" class="leadership-thumb"  />
                         <h3><?php the_sub_field('name'); ?></h3>

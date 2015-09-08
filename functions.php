@@ -19,6 +19,7 @@ if( function_exists('acf_add_options_page') ) {
 
 //Additional Media Library Sizes
 add_image_size( 'leadership-thumb', 206, 181, true );
+add_image_size( 'leadership-full', 309, 281, true );
 
 
 function tinymce_buttons($buttons)
