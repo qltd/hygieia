@@ -292,7 +292,9 @@ a:hover {
     padding: 6px 0;
     letter-spacing: 2px;
     font-weight: 300; }
-    #masthead-wrap .site-description span {
+    #masthead-wrap .site-description a {
+      color: white; }
+    #masthead-wrap .site-description a:hover, #masthead-wrap .site-description span {
       color: #f59f1a; }
 
 .site-title {

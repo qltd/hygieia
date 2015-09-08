@@ -63,7 +63,10 @@ a:hover { text-decoration: none; color: $linkHover; }
 		padding: 6px 0;
 		letter-spacing: 2px;
 		font-weight: 300;
-		span {
+		a {
+			color: white;
+		}
+		a:hover, span {
 			color: $linkHover;
 		}
 	}

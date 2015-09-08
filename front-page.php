@@ -81,7 +81,6 @@
 <section class="callout red">
 	<div class="centered">
 		<?php the_field('callout_text'); ?>
-		<a href="<?php the_field('callout_link'); ?>" class="btn"><?php the_field('callout_button_text'); ?></a>
 	</div>
 </section>
 
@@ -89,7 +88,6 @@
 	<div class="centered">
 		<div class="left-col">
 			<?php the_field('case_study_text'); ?><br />
-			<a href="<?php the_field('case_study_link'); ?>" class="btn">View Case Study</a>
 		</div>
 		<div class="right-col">
 			<?php the_field('case_study_video'); ?>
@@ -130,8 +128,6 @@
 <section class="contact-callout">
 	<div class="centered">
 		<?php the_field('contact_content'); ?>
-		<br />
-		<a href="<?php echo get_permalink(47); ?>" class="btn">Apply Now</a>
 	</div>
 </section>
 
