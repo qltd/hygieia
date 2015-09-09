@@ -309,8 +309,8 @@ a:hover {
     fill: #f59f1a; }
   .site-title #Name {
     fill: #b42c33; }
-  .site-title #Tagline {
-    fill: white; }
+  .site-title #TagLine {
+    fill: #f59f1a; }
 
 /* Navigation */
 .menu-toggle {
