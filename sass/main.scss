@@ -523,18 +523,24 @@ a:hover { text-decoration: none; color: $linkHover; }
 	color: white;
 	font: em(16) $primaryFont;
 	padding: 42px 0px;
-	.right-col { width: auto; max-width: 690px; float: right; padding: 40px; }
+	.right-col { width: auto; min-width: 690px; max-width: 690px; float: right; padding: 40px;
+		@include responsive('700px'){
+			min-width: auto;
+		}
+	}
 	@extend %clearfix;
 	h3 { color: #fff; font-weight: 300; text-transform: capitalize; }
 	ul {
 		padding: 0px;
 		margin-bottom: 30px;
-		li {
+		a {
+			color: #fff;
 			margin-bottom: 14px;
-			font-size: em(14);
+			font-size: em(16);
 			@include responsive('540px'){
 				margin-bottom: 30px;
 			}
+			&:hover { color: $linkHover; }
 		}
 		.date { font-weight: 400; font-size: em(18); display: inline-block;  margin-right: 20px;  }
 	}
@@ -551,7 +557,7 @@ a:hover { text-decoration: none; color: $linkHover; }
 	p { padding: 0 100px; }
 	h2 { font-weight: 300; font-size: em(42); }
 	h4 { font-size: em(17); font-weight: 300; text-transform: uppercase;  margin: 40px 0 20px; }
-	li { font-size: em(14); margin-bottom: 14px; padding: 0 40px; }
+	a { color: #fff; font-size: em(16); margin-bottom: 14px; padding: 0 40px; &:hover { color: $linkHover; } }
 	.date { font-weight: 400; font-size: em(18); display: inline-block; margin-right: 10px; }
 	@include responsive('740px'){
 		padding: 50px 0px;

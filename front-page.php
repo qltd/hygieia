@@ -98,11 +98,19 @@
 <section class="news-feed">
 	<div class="centered">
 		<div class="right-col">
-			<h3>What are people saying?</h3>
+			<h3>What People Are Saying.</h3>
 			<ul class="feed-list">
-				<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-				<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-				<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
+				<?php $args = array('numberposts' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'slug',
+					'terms' => 'event',
+					'operator' => 'NOT IN'
+				))); $recent_posts = wp_get_recent_posts( $args );
+				foreach($recent_posts as $recent):
+				 ?>
+					<li><a href="<?php echo get_permalink($recent['ID']); ?>"><span class="date"><?php echo get_the_date('', $recent['ID']); ?></span> <?php echo $recent['post_title']; ?></a></li>
+				<?php endforeach; ?>
 			</ul>
 			<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
 		</div>
@@ -117,12 +125,15 @@
 
 <section class="event-feed">
 	<?php the_field('events_content'); ?>
-	<h4>Upcoming Events</h4>
-	<ul class="feed-lsit">
-		<li><span class="date">January 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-			<li><span class="date">May 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat nibh.</li>
-			<li><span class="date">November 14, 2013</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed velit neque, sed placerat nibh.</li>
-	</ul>
+	<?php $args = array('numberposts' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'category' => '3'); $recent_posts = wp_get_recent_posts( $args ); ?>
+	<?php if (!empty($recent_posts)): ?>
+		<h4>Upcoming Events</h4>
+		<ul class="feed-lsit">
+			<?php foreach($recent_posts as $recent):?>
+				<li><a href="<?php echo get_permalink($recent['ID']); ?>"><span class="date"><?php echo get_the_date('', $recent['ID']); ?></span> <?php echo $recent['post_title']; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
 </section>
 
 <section class="contact-callout">
