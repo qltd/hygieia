@@ -40,6 +40,20 @@
             <?php endwhile; ?>
         <?php endif; ?>
 
+        <?php if (get_field('board_observers')): ?>
+            <?php $c=1; while(has_sub_field('board_observers')): ?>
+                <?php $img = get_sub_field('image'); ?>
+                <li class="board-o">
+                    <a href="#" data-img="<?php echo $img['sizes']['leadership-full']; ?>" data-name="<?php the_sub_field('name'); ?>" data-title="<?php the_sub_field('title'); ?>" data-description="<?php the_sub_field('summary'); ?>">
+                        <?php if ($c==1): ?><span class="section-title">Board Observers</span><?php  $c++; endif; ?>
+                        <img src="<?php echo $img['sizes']['leadership-thumb']; ?>" class="leadership-thumb" />
+                        <h3><?php the_sub_field('name'); ?></h3>
+                        <h4><?php the_sub_field('title'); ?></h4>
+                    </a>
+                </li>
+            <?php endwhile; ?>
+        <?php endif; ?>
+
         <?php if (get_field('clinical_advisors')): ?>
             <?php $c=1; while(has_sub_field('clinical_advisors')): ?>
                 <?php $img = get_sub_field('image'); ?>

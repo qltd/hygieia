@@ -713,6 +713,12 @@ a:hover { text-decoration: none; color: $linkHover; }
 				color: $red;
 			}
 		}
+		&.board-o {
+			border-top: 7px solid #747474;
+			.section-title {
+				color: #747474;
+			}
+		}
 		&.clinical {
 			border-top: 7px solid #a4aad6;
 			.section-title {

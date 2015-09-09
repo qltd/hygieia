@@ -960,6 +960,10 @@ a:hover {
       border-top: 7px solid #b42c33; }
       .leadership-grid li.board .section-title {
         color: #b42c33; }
+    .leadership-grid li.board-o {
+      border-top: 7px solid #747474; }
+      .leadership-grid li.board-o .section-title {
+        color: #747474; }
     .leadership-grid li.clinical {
       border-top: 7px solid #a4aad6; }
       .leadership-grid li.clinical .section-title {
