@@ -934,6 +934,22 @@ blockquote {
     @media (max-width: 800px) {
       #page-content section {
         width: 100%; } }
+    #page-content section.news-page {
+      margin-top: 50px; }
+      #page-content section.news-page .post-wrap {
+        margin-bottom: 50px; }
+      #page-content section.news-page .entry-meta {
+        margin-bottom: 10px;
+        font-size: 0.75em;
+        font-style: italic;
+        font-weight: 400; }
+      #page-content section.news-page .title, #page-content section.news-page .title a {
+        color: #333;
+        font-size: 1.125em; }
+        #page-content section.news-page .title:hover, #page-content section.news-page .title a:hover {
+          color: #f59f1a; }
+      #page-content section.news-page .text {
+        color: #747474; }
   @media (max-width: 1000px) {
     #page-content {
       padding: 0 40px; } }

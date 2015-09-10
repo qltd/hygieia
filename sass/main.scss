@@ -629,6 +629,13 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		@include responsive('800px'){
 			width: 100%;
 		}
+		&.news-page {
+			margin-top: 50px;
+			.post-wrap { margin-bottom: 50px; }
+			.entry-meta { margin-bottom: 10px; font-size: em(12); font-style: italic; font-weight: 400; }
+			.title, .title a { color: #333; font-size: em(18); &:hover { color: $linkHover; } }
+			.text { color: #747474; }
+		}
 	}
 	@include responsive('1000px'){
 		padding: 0 40px;
