@@ -181,8 +181,18 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 			font-size: 2.4em;
 			li {
 				float: none;
+				border: none !important;
 				a {
 					color: #fff;
+				}
+			}
+			ul.sub-menu {
+				background: none;
+				font-size: em(10);
+				border: none;
+				position: static;
+				li {
+					margin-bottom: 6px;
 				}
 			}
 		}
@@ -220,7 +230,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		font-size: em(48);
 		line-height: 1.3;
 		color: #382d23;
-		text-shadow: 0 0 8px #f5c573;
+		text-shadow: 0 0 20px #f5c573;
 		@include responsive('900px'){
 			text-align: center;
 			padding: 40px;
@@ -379,7 +389,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 	top: 0;
 	left: 0;
 
-	border: 1px solid #ebf2f5;
+	border: 3px solid #ebf2f5;
 }
 
 .front {
@@ -430,7 +440,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 	}
 }
 
-.front:hover, .back:hover { border: 1px solid $linkHover; cursor: pointer; }
+.front:hover, .back:hover { border: 3px solid $linkHover; cursor: pointer; }
 
 
 .btn {
