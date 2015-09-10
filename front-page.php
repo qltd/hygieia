@@ -97,23 +97,21 @@
 
 <section class="news-feed">
 	<div class="centered">
-		<div class="right-col">
-			<h3>What People Are Saying.</h3>
-			<ul class="feed-list">
-				<?php $args = array('numberposts' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'tax_query' => array(
-				array(
-					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => 'event',
-					'operator' => 'NOT IN'
-				))); $recent_posts = wp_get_recent_posts( $args );
-				foreach($recent_posts as $recent):
-				 ?>
-					<li><a href="<?php echo get_permalink($recent['ID']); ?>"><span class="date"><?php echo get_the_date('', $recent['ID']); ?></span> <?php echo $recent['post_title']; ?></a></li>
-				<?php endforeach; ?>
-			</ul>
-			<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
-		</div>
+		<h3>What People Are Saying.</h3>
+		<ul class="feed-list">
+			<?php $args = array('numberposts' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'tax_query' => array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => 'event',
+				'operator' => 'NOT IN'
+			))); $recent_posts = wp_get_recent_posts( $args );
+			foreach($recent_posts as $recent):
+			 ?>
+				<li><a href="<?php echo get_permalink($recent['ID']); ?>"><span class="date"><?php echo get_the_date('', $recent['ID']); ?></span> <?php echo $recent['post_title']; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<a href="<?php echo get_permalink(41); ?>" class="btn">More News</a>
 	</div>
 </section>
 
