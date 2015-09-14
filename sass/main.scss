@@ -611,6 +611,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		float: left;
 		min-height: 300px;
 		margin-right: 2%;
+		padding: 0;
 		&.Lines {
 			background: url(../img/sidebar-bg.svg) no-repeat top left;
 			min-height: 450px;
@@ -618,6 +619,12 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		}
 		&.Leaves {
 			background: url(../img/sidebar-logo.svg) no-repeat center center;
+		}
+		&.contact-info > div {
+			margin: 0;
+			padding: 10px 5px 0;
+			background: rgba(0,0,0,0.2);
+			min-height: 380px;
 		}
 		@include responsive('800px'){
 			display: none;
@@ -644,7 +651,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 
 
 /* Contact Form */
-.gform_wrapper { font-family: $primaryFont; }
+.gform_wrapper { font-family: $primaryFont; @extend %clearfix; }
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label  textarea { border: 1px solid #d2d3d5; width: 100% !important; }
 .gform_wrapper .top_label input.medium { height: 40px; }
 .gform_wrapper ul li.gfield {
@@ -696,9 +703,8 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		}
 	}
 	.footer-top {
-		background: $red;
+		background: #333;
 		@extend %clearfix;
-		body.home & { background: #333; }
 		.centered {
 			@extend %center-block;
 			padding: 35px 100px;
@@ -734,6 +740,9 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		margin-top: 0;
 		float: left;
 		#Tagline path, #Name path { fill: #ffffff }
+		@include responsive('1022px'){
+			width: 18%;
+		}
 		@include responsive('946px'){
 			margin-top: 4%;
 		}

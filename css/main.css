@@ -179,7 +179,7 @@ th {
 /* Colors */
 /* Layout */
 /* Clearfix */
-.wp-caption:after, #masthead-wrap header:after, .main-navigation ul:after, .body-content:after, .case-study:after, .news-feed:after, #page-content:after, #footer-wrap .footer-top:after, #footer-wrap .footer-top .centered:after, .leadership-grid:after {
+.wp-caption:after, #masthead-wrap header:after, .main-navigation ul:after, .body-content:after, .case-study:after, .news-feed:after, #page-content:after, .gform_wrapper:after, #footer-wrap .footer-top:after, #footer-wrap .footer-top .centered:after, .leadership-grid:after {
   content: "";
   display: table;
   clear: both; }
@@ -919,12 +919,18 @@ blockquote {
     margin-top: 10px;
     float: left;
     min-height: 300px;
-    margin-right: 2%; }
+    margin-right: 2%;
+    padding: 0; }
     #page-content aside.Lines {
       background: url(../img/sidebar-bg.svg) no-repeat top left;
       min-height: 450px; }
     #page-content aside.Leaves {
       background: url(../img/sidebar-logo.svg) no-repeat center center; }
+    #page-content aside.contact-info > div {
+      margin: 0;
+      padding: 10px 5px 0;
+      background: rgba(0, 0, 0, 0.2);
+      min-height: 380px; }
     @media (max-width: 800px) {
       #page-content aside {
         display: none; } }
@@ -1044,9 +1050,7 @@ blockquote {
     #footer-wrap .site-footer .ce svg {
       fill: #fff; }
   #footer-wrap .footer-top {
-    background: #b42c33; }
-    body.home #footer-wrap .footer-top {
-      background: #333; }
+    background: #333; }
     #footer-wrap .footer-top .centered {
       padding: 35px 100px;
       max-width: 1280px;
@@ -1080,6 +1084,9 @@ blockquote {
     float: left; }
     #footer-wrap .site-title #Tagline path, #footer-wrap .site-title #Name path {
       fill: #ffffff; }
+    @media (max-width: 1022px) {
+      #footer-wrap .site-title {
+        width: 18%; } }
     @media (max-width: 946px) {
       #footer-wrap .site-title {
         margin-top: 4%; } }

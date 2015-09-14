@@ -22,7 +22,7 @@
 <section class="flip-cards">
 	<div class="centered">
 
-		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flip-container">
 			<div class="flipper">
 				<div class="front">
 					<div>
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flip-container">
 			<div class="flipper">
 				<div class="front">
 					<div>
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 
-		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flip-container">
 			<div class="flipper">
 				<div class="front">
 					<div>
