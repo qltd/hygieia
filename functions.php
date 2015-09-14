@@ -43,6 +43,14 @@ add_filter('mce_buttons_2','tinymce_buttons_2');
 update_option('image_default_link_type','none');
 
 
+/* Change the Gravity forms submit button to a button type */
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 5 );
+function form_submit_button ( $button, $form ){
+    $button = str_replace( "input", "button", $button );
+    $button = str_replace( "/", "", $button );
+    $button .= "{$form['button']['text']}</button>";
+    return $button;
+}
 
 
 /*
@@ -133,13 +141,13 @@ add_action( 'widgets_init', 'hygieia_widgets_init' );
 function hygieia_scripts() {
 
   wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic');
-
   wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-
   wp_enqueue_style( '_m-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'select2-css', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css' );
+
 
   wp_enqueue_script( '_m-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
+  wp_enqueue_script( 'select2-script', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js', array('jquery'), '20150809', true );
   wp_enqueue_script( '_m-plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '20150809', true );
   wp_enqueue_script( '_m-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery', '_m-plugins'), '20150809', true );
 

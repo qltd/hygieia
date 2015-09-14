@@ -443,7 +443,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 .front:hover, .back:hover { border: 3px solid $linkHover; cursor: pointer; }
 
 
-.btn {
+.btn, .gform_button {
 	border-radius: 3px;
 	border: 2px solid white;
 	display: inline-block;
@@ -638,11 +638,42 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		}
 	}
 	@include responsive('1000px'){
-		padding: 0 40px;
+		padding: 0 40px 50px;
 	}
 }
 
 
+/* Contact Form */
+.gform_wrapper { font-family: $primaryFont; }
+.gform_wrapper .top_label input.medium, .gform_wrapper .top_label  textarea { border: 1px solid #d2d3d5; width: 100% !important; }
+.gform_wrapper .top_label input.medium { height: 40px; }
+.gform_wrapper ul li.gfield {
+	width: 45%; margin-right: 5%; float: left; clear: none !important;
+	@include responsive('640px'){
+		width: 100%; margin: 0; float: none;
+	}
+}
+.gform_wrapper ul li.gfield.dropdown { width: 100%; margin: 30px 0;  }
+.gform_wrapper ul li.gfield.textarea { width: 95%; margin: 0;
+	@include responsive('640px'){
+		margin: 0; width: 100%;
+	}
+ }
+.gfield_description { float: left; }
+.gform_button { float: right; margin-right: 5%; transition: all 0.3s ease; background: #fff; color: #333; border-color: #d2d3d5;
+	&:hover { color: #333; }
+	&:after { color: #333; }
+	@include responsive('640px'){
+		margin-right: 0;
+	}
+
+}
+.select2-container { @include responsive('640px'){
+		width: 100% !important;
+	}}
+.select2-selection { padding-top: 6px; height: 40px !important; }
+.select2-container--default .select2-selection--single .select2-selection__arrow b { border-color: $linkHover transparent transparent transparent !important; border-width: 10px 9px 0 9px !important; margin-top: 2px !important;  margin-left: -16px !important; }
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b { border-color: transparent transparent $linkHover transparent !important; border-width: 0px 9px 10px 9px !important; }
 
 
 
@@ -665,8 +696,9 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		}
 	}
 	.footer-top {
-		background: #333;
+		background: $red;
 		@extend %clearfix;
+		body.home & { background: #333; }
 		.centered {
 			@extend %center-block;
 			padding: 35px 100px;

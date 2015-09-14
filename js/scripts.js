@@ -16,6 +16,7 @@
       return false;
     });
 
+   $('select').select2();
 
 $('video').on('ended', function () {
 	console.log('reloading');
