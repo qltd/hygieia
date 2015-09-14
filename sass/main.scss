@@ -575,8 +575,8 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 	.date { font-weight: 400; font-size: em(18); display: inline-block; margin-right: 10px; }
 	ul { list-style: none; }
 	@include responsive('740px'){
-		padding: 50px 0px;
-		p { padding: 0 40px; }
+		padding: 50px 40px;
+		p { padding: 0px; }
 		li {
 			margin-bottom: 30px;
 			a { color: #fff; font-size: em(16); margin-bottom: 14px; padding: 0 40px; &:hover { color: $linkHover; } }
