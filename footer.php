@@ -19,7 +19,7 @@
 						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/HygieiaLogoWithTag_Better.svg'); ?>
 					</a>
 					<div>
-						<p><strong>US:</strong> 6276 Jackson Road, STE. G | Ann Arbor, MIchigan 48103 | USA | +1.734.369.9980</p>
+						<p><strong>US:</strong> 6276 Jackson Road, STE. G | Ann Arbor, MIchigan 48103 | USA | +1 734 369 9980</p>
 						<p><strong>UK:</strong> Colvin House 20, Carrowreagh Road | Dundonald BT16 1QT | UK | +44 (0)2890 481762</p>
 					</div>
 				</div>

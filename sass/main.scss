@@ -450,7 +450,6 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 	color: white;
 	padding: 10px 20px;
 	letter-spacing: 2px;
-	text-transform: uppercase;
 	position: relative;
 	font: 1rem $primaryFont;
 	font-weight: 400;
@@ -620,11 +619,18 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 		&.Leaves {
 			background: url(../img/sidebar-logo.svg) no-repeat center center;
 		}
-		&.contact-info > div {
-			margin: 0;
-			padding: 10px 5px 0;
-			background: rgba(0,0,0,0.2);
-			min-height: 380px;
+		&.contact-info {
+			height: 290px;
+			min-height: auto;
+			background: url(../img/sidebar-bg.svg) no-repeat top left;
+			background-size: 200px;
+			padding: 0;
+			> div {
+				margin: 0;
+				padding: 11px 5px 16px;
+				background: rgba(0,0,0,0.2);
+
+			}
 		}
 		@include responsive('800px'){
 			display: none;
@@ -820,12 +826,18 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 			font-weight: 300;
 			font-size: em(46);
 			margin-bottom: 10px;
+			@include responsive('500px'){
+				font-size: em(34);
+			}
 		}
 
 		.og-details h4 {
 			font-weight: 400;
 			font-size: em(18);
 			margin-bottom: 10px;
+			@include responsive('500px'){
+				font-size: em(14);
+			}
 		}
 
 		.og-details p {
@@ -833,6 +845,9 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 			font-size: 16px;
 			line-height: 22px;
 			color: #999;
+			@include responsive('500px'){
+				font-size: em(14);
+			}
 		}
 
 	}

@@ -2,7 +2,7 @@
 
 <div id="page-content" class="body-text">
 
-    <aside id="sidebar" class="Leaves">
+    <aside id="sidebar" class="<?php the_field('sidebar_background', 41); ?>">
 
     </aside>
 
