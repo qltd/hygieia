@@ -657,7 +657,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 
 
 /* Contact Form */
-.gform_wrapper { font-family: $primaryFont; @extend %clearfix; }
+.gform_confirmation_wrapper, .gform_wrapper { font-size: em(14); font-family: $primaryFont; @extend %clearfix; }
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label  textarea { border: 1px solid #d2d3d5; width: 100% !important; }
 .gform_wrapper .top_label input.medium { height: 40px; }
 .gform_wrapper ul li.gfield {
