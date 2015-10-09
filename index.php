@@ -2,8 +2,8 @@
 
 <div id="page-content" class="body-text">
 
-    <aside id="sidebar" class="<?php the_field('sidebar_background', 41); ?>">
-
+    <aside id="sidebar" class="<?php if (!get_field('sidebar')): the_field('sidebar_background', 41); endif; ?>">
+        <br /><?php the_field('sidebar', 41); ?>
     </aside>
 
     <section class="news-page">

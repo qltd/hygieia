@@ -10,6 +10,9 @@
 			<p><strong>UK:</strong> <br />Colvin House 20, Carrowreagh Road <br /> Dundonald BT16 1QT <br /> +44 (0)2890 481762</p>
 		</div>
 	<?php endif; ?>
+            <aside id="sidebar" class="<?php if (!get_field('sidebar')): the_field('sidebar_background'); endif; ?>">
+                <?php the_field('sidebar'); ?>
+            </aside>
     </aside>
 
     <section class="content-page">
