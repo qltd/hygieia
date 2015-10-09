@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php global $context; get_header(); ?>
 
 <section class="hero-unit" style="background: url(<?php the_field('hero_image'); ?>) no-repeat center center; background-size: cover;">
 	<h2><?php the_field('hero_text'); ?></h2>
@@ -26,7 +26,7 @@
 			<div class="flipper">
 				<div class="front">
 					<div>
-						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/patients-icon.svg'); ?>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/patients-icon.svg', false, $context); ?>
 						<h5>For Patients</h5>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 			<div class="flipper">
 				<div class="front">
 					<div>
-						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/physicians-icon.svg'); ?>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/physicians-icon.svg', false, $context); ?>
 						<h5>For Physicians</h5>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 			<div class="flipper">
 				<div class="front">
 					<div>
-						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/payers-icon.svg'); ?>
+						<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/payers-icon.svg', false, $context); ?>
 						<h5>For Payers</h5>
 					</div>
 				</div>

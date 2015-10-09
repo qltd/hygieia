@@ -6,6 +6,17 @@
  */
 
 
+//for the password protection, might have to remove before going live
+$username = 'Hygieia';
+$password = 'Staging @ccess1!';
+
+$context = stream_context_create(array(
+    'http' => array(
+        'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+    )
+));
+
+
 if( function_exists('acf_add_options_page') ) {
 
   acf_add_options_page(array(

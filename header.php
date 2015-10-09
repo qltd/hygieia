@@ -1,4 +1,5 @@
 <?php
+global $context;
 /**
  * The header for our theme.
  *
@@ -53,7 +54,7 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
-					<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/HygieiaLogoWithTag_Better.svg'); ?>
+					<?php echo file_get_contents(get_bloginfo('template_directory'). '/img/HygieiaLogoWithTag_Better.svg', false, $context); ?>
 				</a>
 
 			</div><!-- .site-branding -->

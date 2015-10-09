@@ -179,7 +179,7 @@ th {
 /* Colors */
 /* Layout */
 /* Clearfix */
-.wp-caption:after, #masthead-wrap header:after, .main-navigation ul:after, .body-content:after, .case-study:after, .news-feed:after, #page-content:after, .gform_confirmation_wrapper:after, .gform_wrapper:after, #footer-wrap .footer-top:after, #footer-wrap .footer-top .centered:after, .leadership-grid:after {
+.wp-caption:after, #masthead-wrap header:after, .main-navigation ul:after, .body-content:after, .case-study:after, .news-feed:after, #page-content:after, .gform_wrapper:after, #footer-wrap .footer-top:after, #footer-wrap .footer-top .centered:after, .leadership-grid:after {
   content: "";
   display: table;
   clear: both; }
@@ -966,8 +966,7 @@ blockquote {
 
 /* Contact Form */
 .gform_confirmation_wrapper, .gform_wrapper {
-  font-size: 0.875em;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif; font-size: 14px; }
 
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label textarea {
   border: 1px solid #d2d3d5;
