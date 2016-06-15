@@ -569,7 +569,7 @@ blockquote { font-style: italic; padding-left: 0 	px; }
 
 .og-close:hover::before, .og-close:hover::after { background: #333; }
 
-.og-fullimg, .og-details { width: 50%; float: left; height: 100%; /* overflow: auto; */ position: relative; }
+.og-fullimg, .og-details { width: 50%; float: left; height: 100%; overflow: auto; position: relative; }
 
 .og-details { padding: 0 20px; }
 
